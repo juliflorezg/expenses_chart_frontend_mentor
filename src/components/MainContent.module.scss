@@ -1,0 +1,61 @@
+.main-content {
+  width: 90%;
+  max-width: 355px;
+  margin: 0 auto;
+  padding: 30px 20px;
+
+  background-color: var(--pale-orange);
+
+  color: var(--dark-brown);
+  border-radius: 15px;
+
+  // text-align: left;
+
+  &__title{
+    margin-bottom: 25px;
+  }
+
+  &__day-list{
+    min-height: 150px;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__summary {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 25px;
+    border-top: 2px solid var(--cream);
+    div * {
+      display: block;
+    }
+
+    div:last-child{
+      // background-color: purple;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    &-title,&-label{
+      font-size: 0.9rem;
+      color: var(--medium-brown);
+    }
+    &-total,&-percentage{
+      font-weight: 700;
+    }
+    &-title{
+      margin-bottom: 10px;
+    }
+    &-total{
+      font-size: 1.85rem;
+    }
+    &-percentage{
+      text-align: right;
+      margin-bottom: 5px;
+    }
+
+  }
+}
