@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# Frontend Mentor - Expenses chart component solution
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is my solution to the [Expenses chart component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/expenses-chart-component-e7yJBUdjwt). 
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Frontend Mentor - Expenses chart component solution](#frontend-mentor---expenses-chart-component-solution)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [The challenge](#the-challenge)
+    - [Screenshot](#screenshot)
+    - [Links](#links)
+  - [My process](#my-process)
+    - [Built with](#built-with)
+    - [What I learned](#what-i-learned)
+    - [Continued development](#continued-development)
+  - [Author](#author)
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### The challenge
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Users should be able to:
 
-### `npm test`
+- View the bar chart and hover over the individual bars to see the correct amounts for each day
+- See the current day’s bar highlighted in a different colour to the other bars
+- View the optimal layout for the content depending on their device’s screen size
+- See hover states for all interactive elements on the page
+- **Bonus**: Use the JSON data file provided to dynamically size the bars on the chart
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Screenshot
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Links
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## My process
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- I created this project using the create-react-app tool for creating the overall react app, built components for the Balance section, the SVG logo, the chart container as well as every day in the chart. I used the json data provided for generating the <Day/> components. For styling I used a mix of global css with base styles & CSS variables and CSS modules with SASS for the components.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Built with
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Semantic HTML markup
+- CSS custom properties
+- Flexbox
+- CSS Modules
+- SASS
+- Mobile-first workflow
+- [React](https://reactjs.org/) - JS library
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+### What I learned
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+I applied react concepts such as props, state as well as using the useEffect hook for the overall data in the app.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```js
+  // using useEffect to get the days data from the JSON file, then setting the obtained data as state for use in the app
+  useEffect(() => {
+    const getDataFromJSON = async () => {
+      const response = await fetch('./data.json')
+      const responseData = await response.json()
+      setData(responseData)
+    }
 
-### Code Splitting
+    getDataFromJSON()
+  }, [])
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Continued development
 
-### Analyzing the Bundle Size
+- Would be great to obtain the data from an API to get the total user balance, total per month as well as the previous month data to compare it to the current month so data can be more dynamic.
+- Adding a little description for every day's expense would be a nice addon for users.
+- Being able to see the monthly calendar and select a specific week for checking expenses.
+- Adding inputs in other components for getting the monthly income and every day expense.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Author
 
-### Advanced Configuration
+- Frontend Mentor - [@juliflorezg](https://www.frontendmentor.io/profile/juliflorezg)
+- Github - [@juliflorezg](https://github.com/juliflorezg)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
