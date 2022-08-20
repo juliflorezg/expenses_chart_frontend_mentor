@@ -1,0 +1,35 @@
+.balance {
+  width: 90%;
+  max-width: 355px;
+  position: relative;
+  margin: 0 auto;
+  padding: 20px;
+  color: var(--cream);
+  background-color: var(--soft-red);
+  border-radius: 15px;
+  // text-align: left;
+
+  // @media{
+  //   width:
+  // }
+
+  &__title {
+    // color: red;
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+  }
+
+  &__total {
+    font-weight: 700;
+    font-size: 20px;
+    display: block;
+  }
+
+  &__logo {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+  }
+}
