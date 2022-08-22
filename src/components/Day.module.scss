@@ -1,0 +1,54 @@
+.day {
+  list-style-type: none;
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  cursor: pointer;
+
+  &:hover &__bar {
+    opacity: 0.6;
+  }
+  &:hover &__day {
+    font-weight: 700;
+  }
+
+  &__bar-container {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  &__amount {
+    font-size: 0.8rem;
+    font-weight: 700;
+    background-color: var(--dark-brown);
+    color: var(--cream);
+    padding: 0.5em;
+    border-radius: 3px;
+    position: absolute;
+    // top: -70%;
+    // top: -35px;
+    left: -25%;
+  }
+
+  &__bar {
+    background-color: var(--soft-red);
+    height: 80px;
+    height: 50%;
+    // margin-bottom: 5px;
+    border-radius: 3px;
+
+    &--current {
+      background-color: var(--cyan);
+    }
+  }
+
+  &__day {
+    font-size: 0.75rem;
+    display: block;
+    text-align: center;
+    padding-top: 5px;
+  }
+}
