@@ -2,21 +2,31 @@ import React from 'react'
 import Day from './Day'
 import styles from './MainContent.module.scss'
 
-export default function MainContent(props) {
-  console.log(props.days)
+export default function MainContent({
+  days,
+  currentWeekDay,
+  maxAmount,
+  changeCurrentDay,
+}) {
+  console.log(days)
+  console.log({ currentWeekDay })
+  console.log({ maxAmount })
   return (
     <div className={styles['main-content']}>
       <h1 className={styles['main-content__title']}> Spending - Last 7 days</h1>
 
       <ul className={styles['main-content__day-list']}>
-        {props.days.map(day => (
+        {days.map(day => (
           <Day
             amount={day.amount}
             day={day.day}
-            isCurrentDay={day === props.currentWeekDay}
+            currentWeekDay={currentWeekDay}
+            isCurrentDay={day.day === currentWeekDay}
+            key={day.day + day.amount}
+            maxAmount={maxAmount}
+            changeCurrentDay={changeCurrentDay}
           />
         ))}
-        <li>{props.currentWeekDay}</li>
       </ul>
 
       <div className={styles['main-content__summary']}>
@@ -36,7 +46,5 @@ export default function MainContent(props) {
         </div>
       </div>
     </div>
-
-    // <></>
   )
 }
