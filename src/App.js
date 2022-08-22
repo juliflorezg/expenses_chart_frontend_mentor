@@ -8,6 +8,11 @@ function App() {
 
   const [currentWeekDay, setCurrentWeekDay] = useState('')
 
+  console.log(
+    '%cApp rendering!',
+    'color:yellow;font-family:system-ui;font-size:1rem;-webkit-text-stroke: 1px black;font-weight:bold'
+  )
+
   useEffect(() => {
     const getDataFromJSON = async () => {
       const response = await fetch('./data.json')
@@ -33,10 +38,20 @@ function App() {
 
     setCurrentWeekDay(weekDay)
   }, [])
+
+  const changeCurrentDay = day => {
+    setCurrentWeekDay(day)
+  }
+
   return (
     <section className="App">
       <Balance />
-      <MainContent days={data} currentWeekDay={currentWeekDay} />
+      <MainContent
+        days={data}
+        currentWeekDay={currentWeekDay}
+        maxAmount={Math.max(...data.map(day => day.amount))}
+        changeCurrentDay={changeCurrentDay}
+      />
     </section>
   )
 }
